@@ -1,0 +1,13 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+*.pyc
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Editors
+.vscode/
+.idea/

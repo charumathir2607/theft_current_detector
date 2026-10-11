@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "author": "GridSentinel Demo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 25,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": -10,
+      "left": -80,
+      "attrs": {
+        "value": "900"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot2",
+      "top": 170,
+      "left": -80,
+      "attrs": {
+        "value": "200"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 80,
+      "left": 400,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 125,
+      "left": 340,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "pot1:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "h70",
+        "v-20"
+      ]
+    ],
+    [
+      "pot1:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "h90",
+        "v100"
+      ]
+    ],
+    [
+      "pot1:SIG",
+      "esp:D34",
+      "blue",
+      [
+        "h120",
+        "v20"
+      ]
+    ],
+    [
+      "pot2:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "h50",
+        "v-130"
+      ]
+    ],
+    [
+      "pot2:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "h100",
+        "v-20"
+      ]
+    ],
+    [
+      "pot2:SIG",
+      "esp:D35",
+      "purple",
+      [
+        "h130",
+        "v-70"
+      ]
+    ],
+    [
+      "esp:D2",
+      "r1:1",
+      "green",
+      [
+        "h30",
+        "v-20"
+      ]
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      [
+        "h20",
+        "v-25"
+      ]
+    ],
+    [
+      "led1:C",
+      "esp:GND.1",
+      "black",
+      [
+        "h-20",
+        "v150",
+        "h-80"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
